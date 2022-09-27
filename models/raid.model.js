@@ -6,9 +6,10 @@ const raidSchema = new mongoose.Schema(
             type: String,
             maxlength: 250,
         },
-        saison: {
+        raidSaison: {
             type: String,
             maxlength: 250,
+            unique: true
         },
     },
     {

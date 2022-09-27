@@ -3,8 +3,8 @@ const ObjectId = require("mongoose").Types.ObjectId;
 
 module.exports.createRaid = async (req, res) => {  
   const newRaid = new RaidModel({
-    raidName: req.body.name,
-    saison: req.body.saison
+    raidName: req.body.raidName,
+    raidSaison: req.body.raidSaison
   });
 
   try {
@@ -27,8 +27,8 @@ module.exports.updateRaid = (req, res) => {
     return res.status(400).send("ID unknown : " + req.params.id);
 
   const updatedRecord = {
-    name: req.body.name,
-    saison: req.body.saison
+    raidName: req.body.raidName,
+    raidSaison: req.body.raidSaison
   };
 
   RaidModel.findByIdAndUpdate(

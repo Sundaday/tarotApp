@@ -30,8 +30,10 @@ module.exports.updateBoss = (req, res) => {
     return res.status(400).send("ID unknown : " + req.params.id);
 
   const updatedRecord = {
-    name: req.body.name,
-    saison: req.body.saison
+    bossName: req.body.bossName,
+    bossType: req.body.bossType,
+    bossLife: req.body.bossLife,
+    bossLevel: req.body.bossLevel
   };
 
   BossModel.findByIdAndUpdate(
